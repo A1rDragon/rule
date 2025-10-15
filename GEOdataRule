@@ -1,0 +1,46 @@
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/private.list,86400
+ruleset=广告拦截,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/AdGuard/AdvertisingLite/AdvertisingLite.txt
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/trackerslist.list,86400
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/microsoft-cn.list,86400
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/apple-cn.list,86400
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/google-cn.list,86400
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/games-cn.list,86400
+ruleset=国外媒体,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/media.list,86400
+ruleset=国际游戏,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/games.list,86400
+ruleset=AI 平台,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/ai.list,86400
+ruleset=网络测试,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/networktest.list,86400
+ruleset=网络下载,https://raw.githubusercontent.com/A1rDragon/rule/main/download.list
+ruleset=全局设置,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/proxy.list,86400
+ruleset=国内网络,clash-domain:https://github.com/DustinWin/domain-list-custom/releases/download/domains/cn.list,86400
+ruleset=国内网络,GEOIP,clash-ipcidr:https://github.com/DustinWin/geoip/releases/download/ips/privateip.list,86400
+ruleset=国内网络,GEOIP,clash-ipcidr:https://github.com/DustinWin/geoip/releases/download/ips/cnip.list,86400
+ruleset=国外媒体,clash-ipcidr:https://github.com/DustinWin/geoip/releases/download/ips/mediaip.list,86400
+ruleset=国际游戏,clash-ipcidr:https://github.com/DustinWin/geoip/releases/download/ips/gamesip.list,86400
+ruleset=全局设置,clash-ipcidr:https://github.com/DustinWin/geoip/releases/download/ips/telegramip.list,86400
+ruleset=FANZA,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DMM/DMM.list
+ruleset=其他网站,[]FINAL
+
+
+custom_proxy_group=自动选择`url-test`.*`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=手动选择`select`.*
+custom_proxy_group=全局设置`select`[]自动选择`[]手动选择`[]香港节点`[]台湾节点`[]狮城节点`[]日本节点`[]美国节点`[]韩国节点`[]DIRECT
+custom_proxy_group=其他网站`select`[]全局设置`[]除日节点`[]手动选择`[]DIRECT`[]香港节点`[]台湾节点`[]狮城节点`[]日本节点`[]美国节点`[]韩国节点
+custom_proxy_group=网络下载`select`[]下载节点`[]全局设置`[]手动选择`[]DIRECT
+custom_proxy_group=国际游戏`select`[]全局设置`[]美国节点`[]香港节点`[]台湾节点`[]狮城节点`[]日本节点`[]韩国节点`[]手动选择`[]DIRECT
+custom_proxy_group=FANZA`select`[]日本节点`[]全局设置`[]手动选择`[]DIRECT
+custom_proxy_group=AI 平台`select`[]全局设置`[]自动选择`[]狮城节点`[]香港节点`[]台湾节点`[]日本节点`[]美国节点`[]手动选择`[]DIRECT
+custom_proxy_group=网络测试`select`[]全局设置`[]自动选择`[]狮城节点`[]香港节点`[]台湾节点`[]日本节点`[]美国节点`[]手动选择`[]DIRECT
+custom_proxy_group=国外媒体`select`[]全局设置`[]自动选择`[]香港节点`[]台湾节点`[]狮城节点`[]日本节点`[]美国节点`[]手动选择`[]DIRECT
+custom_proxy_group=国内网络`select`[]DIRECT`[]全局设置`[]自动选择`[]手动选择
+custom_proxy_group=广告拦截`select`[]REJECT`[]DIRECT
+custom_proxy_group=除日节点`url-test`(港|HK|Hong Kong|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|新|狮城|坡|狮城|SG|Singapore|台|新北|彰化|TW|Taiwan|澳门|澳|MO|下载|KR|Korea|KOR|首尔|韩|韓)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=下载节点`url-test`(下载|0.1|0.2|0.3)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=香港节点`url-test`(港|HK|Hong Kong)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=日本节点`url-test`(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=台湾节点`url-test`(台|新北|彰化|TW|Taiwan)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=狮城节点`url-test`(新|狮城|坡|狮城|SG|Singapore)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=美国节点`url-test`(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)`http://www.gstatic.com/generate_204`300,,50
+custom_proxy_group=韩国节点`url-test`(KR|Korea|KOR|首尔|韩|韓)`http://www.gstatic.com/generate_204`300,,50
+
+enable_rule_generator=true
+overwrite_original_rules=true
