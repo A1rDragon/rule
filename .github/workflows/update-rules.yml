@@ -1,0 +1,50 @@
+name: Update Microsoft Store OpenClash Rules
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # 每天 02:00 UTC（按需调整）
+  workflow_dispatch: {}   # 手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run generator script
+        env:
+          MS_ENDPOINTS_URL: https://endpoints.office.com/endpoints/worldwide
+          TARGET_IP: ${{ secrets.TARGET_IP }}   # 可选：在仓库 Secrets 中设置要查找的 IP
+          OUT_PATH: generated/openclash_rules.txt
+        run: |
+          python3 scripts/ms_endpoints_to_openclash.py
+
+      - name: Show generated file (for logs)
+        run: |
+          echo "---- generated/openclash_rules.txt ----"
+          sed -n '1,200p' generated/openclash_rules.txt || true
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated/openclash_rules.txt
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: update OpenClash rules (auto) [skip ci]"
+          git push origin HEAD:main
