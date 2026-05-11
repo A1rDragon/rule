@@ -29,15 +29,10 @@ jobs:
       - name: Run generator script
         env:
           MS_ENDPOINTS_URL: https://endpoints.office.com/endpoints/worldwide
-          TARGET_IP: ${{ secrets.TARGET_IP }}   # 可选：在仓库 Secrets 中设置要查找的 IP
+          TARGET_IP: ${{ secrets.TARGET_IP }}
           OUT_PATH: generated/openclash_rules.txt
         run: |
           python3 scripts/ms_endpoints_to_openclash.py
-
-      - name: Show generated file (for logs)
-        run: |
-          echo "---- generated/openclash_rules.txt ----"
-          sed -n '1,200p' generated/openclash_rules.txt || true
 
       - name: Commit and push if changed
         run: |
