@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-all-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 修正此处：将 runs-all-on 改为 runs-on
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
