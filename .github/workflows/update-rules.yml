@@ -2,12 +2,14 @@ name: Update Microsoft Store OpenClash Rules
 
 on:
   schedule:
-    - cron: '0 2 * * *'   # 每天 02:00 UTC（按需调整）
-  workflow_dispatch: {}   # 手动触发
+    - cron: '0 2 * * *'
+  workflow_dispatch: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'   # 强制 actions 在 Node.js 24 上运行
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
