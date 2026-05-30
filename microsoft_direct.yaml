@@ -116,7 +116,6 @@ payload:
   - DOMAIN-SUFFIX,office365.com
   - DOMAIN-SUFFIX,officeapps.live.com
   - DOMAIN-SUFFIX,officecdn.microsoft.com
-  - DOMAIN-SUFFIX,officecdn.microsoft.com.edgesuite.net
   - DOMAIN-SUFFIX,officeclient.microsoft.com
   - DOMAIN-SUFFIX,officepreviewredir.microsoft.com
   - DOMAIN-SUFFIX,officeredir.microsoft.com
